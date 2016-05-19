@@ -65,7 +65,7 @@ def test_preserve_eeprom():
     print "Changed SYSID_THISMAV to {0}".format(new_sysid)
     time.sleep(5) # give parameters time to write
     sitl.stop()
-    vehicle.disconnect()
+    vehicle.close()
 
     # Now see if it persisted
     sitl.launch(copter_args, await_ready=True, use_saved_data=True)
